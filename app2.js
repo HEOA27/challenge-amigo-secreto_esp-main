@@ -15,6 +15,7 @@ function actualizarListaAmigo(){
     }
 
 }
+//actualizarListaAmigo();
 
 function agregarAmigo(){
     //Capturar el valor del campo de entrada
@@ -36,11 +37,16 @@ function sortearAmigo(){
     let numeroDeAmigos=amigos.length;
     //Validar que haya amigos disponibles
     if(numeroDeAmigos!=0){
-        //Generar un índice aleatorio
+         //Generar un índice aleatorio
         indiceAleatorio=Math.floor(Math.random()*(numeroDeAmigos));
         //Obtener el nombre sorteado y Mostrar el resultado
-        let resultado = document.getElementById('resultado');
+        let resultado = document.getElementById('resultado');   
         resultado.innerHTML = amigos[indiceAleatorio];
-       
+        //Las siguientes líneas de código es para permitir al usuario un solo intento y que la lista de nombres se elimine de la vista (solo se muestre el resultado)
+        amigos=[];
+        document.querySelector('#listaAmigos').remove();
+        let button= document.querySelector('.button-add');
+        button.disabled = true;
+
     }
 }

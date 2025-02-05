@@ -14,40 +14,41 @@ En este desafío, se desarrolló una aplicación que permite a los usuarios ingr
   
 #### Soluciones
 Para resolver el desafío se implementaron dos soluciones, por esta razón, en el proyecto se encuentran dos archivos js "app.js" y "app2.js" 
-- La solución en app.js es la que se encuentra vinculada al html y publicada en GitHub Pages. En esta el usuario puede visualizar a su lista de amigos mientras sortea a un amigo N número de veces.
+- La solución en app.js es la que se encuentra vinculada al html y publicada en GitHub Pages. En esta solución el usuario puede visualizar a su lista de amigos mientras sortea a un amigo N número de veces.
 ![image alt](https://github.com/HEOA27/challenge-amigo-secreto_esp-main/blob/9858fcf4fd61e8167068c0a957f860e89362c193/assets/app-resultado.png)
-- La solución en app2.js NO se encuentra vinculada al html o publicada en GitHub Pages,pero está lista para usarse, solo basta con vincular app2 en el html en lugar de app.js. En esta el usuario solo puede realizar un sorteo y la lista se visualizará hasta que aparezca el resultado de ese sorteo.
+- La solución en app2.js NO se encuentra vinculada al html o publicada en GitHub Pages, pero está lista para usarse, solo basta con vincular app2.js en el html en lugar de app.js. En esta solución el usuario solo puede realizar un sorteo y la lista se visualizará hasta que aparezca el resultado de ese sorteo.
 ![image alt](https://github.com/HEOA27/challenge-amigo-secreto_esp-main/blob/9858fcf4fd61e8167068c0a957f860e89362c193/assets/app2-resultadosorteo.png)
 - En ambas soluciones la lista de amigos se visualiza mientras el usuario va añadiendo nuevos amigos.
 
 #### Funciones y código JavaScript
 En ambos códigos JS se encuentran las siguientes tareas realizadas:
-#####Creación de un array para almacenar los nombres
+##### Creación de un array para almacenar los nombres
 Declaración de una variable de tipo array, que almacena los nombres de los amigos ingresados.
-#####Implementación de una función para actualizar la lista de amigos
+##### Implementación de una función para actualizar la lista de amigos
 Creación de una función que recorre el array amigos y agrega cada nombre como un elemento  `<li>` dentro de una lista HTML. Usa innerHTML para limpiar la lista antes de agregar nuevos elementos.
-######Tareas específicas realizadas:
+###### Tareas específicas realizadas:
 - Obtener el elemento de la lista: Utilizar document.getElementById() o document.querySelector() para seleccionar la lista donde se mostrarán los amigos.
 - Limpiar la lista existente: Establecer lista.innerHTML = "" para asegurarse de que no haya duplicados al actualizar.
 - Iterar sobre el arreglo: Usa un bucle for para recorrer el arreglo amigos y crear elementos de lista ( `<li>` ) para cada título.
 - Agregar elementos a la lista: Para cada amigo, crear un nuevo elemento de lista.
-#####Implementación de una función para agregar amigos
+##### Implementación de una función para agregar amigos
 Desarrollo de una función, que permite al usuario ingresar un nombre en el campo de texto y añadirlo a la lista de amigos creada anteriormente.
-######Tareas específicas realizadas:
+###### Tareas específicas realizadas:
 - Capturar el valor del campo de entrada: Utilizar document.getElementById o document.querySelector para obtener el texto ingresado por el usuario.
 - Validar la entrada: Implementar una validación para asegurarse de que el campo no esté vacío. Si está vacío, mostrar un alert con un mensaje de error: "Por favor, inserte un nombre."
 - Actualizar el array de amigos: Si el valor es válido, añadirlo al arreglo que almacena los nombre de amigos usando el método.push().
 - Limpiar el campo de entrada: Después de añadir el nombre, restablecer el campo de texto a una cadena vacía.
-######Implementación de una función para sortear los amigos
+###### Implementación de una función para sortear los amigos
 Creación de una función que seleccione de manera aleatoria uno de los nombres almacenados en el array amigos. Usando Math.random() y Math.floor() para obtener un índice aleatorio.
-######Tareas específicas realizadas:
+###### Tareas específicas realizadas:
 - Validar que haya amigos disponibles: Antes de sortear, comprobar si el array amigos no está vacío.
 - Generar un índice aleatorio: Usar Math.random() y Math.floor() para seleccionar un índice aleatorio del arreglo.
 - Obtener el nombre sorteado: Utilizar el índice aleatorio para acceder al nombre correspondiente en el arreglo.
 - Mostrar el resultado: Actualizar el contenido del elemento de resultado utilizando document.getElementById()  e innerHTML para mostrar el amigo sorteado.
 
-####Javascript　
+#### Javascript　
 app.js
+
 ```javascript
 let amigos = [];
 
@@ -95,6 +96,7 @@ function sortearAmigo(){
 }
 ```
 app2.js
+
 ```javascript
 let amigos = [];
 

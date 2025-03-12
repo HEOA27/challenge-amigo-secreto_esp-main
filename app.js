@@ -35,12 +35,16 @@ function sortearAmigo(){
     let indiceAleatorio=0;
     let numeroDeAmigos=amigos.length;
     //Validar que haya amigos disponibles
-    if(numeroDeAmigos!=0){
+    if(numeroDeAmigos==0){
+        alert("No hay amigos disponibles para sortear");
+        return;
+    }
         //Generar un índice aleatorio
         indiceAleatorio=Math.floor(Math.random()*(numeroDeAmigos));
         //Obtener el nombre sorteado y Mostrar el resultado
         let resultado = document.getElementById('resultado');
-        resultado.innerHTML = amigos[indiceAleatorio];
-       
-    }
+        resultado.innerHTML=`El amigo sorteado es: ${amigos[indiceAleatorio]}`;
+        let limpiarLista=document.getElementById("listaAmigos");
+        limpiarLista.innerHTML="";     
+        
 }

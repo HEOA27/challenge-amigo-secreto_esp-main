@@ -15,7 +15,6 @@ function actualizarListaAmigo(){
     }
 
 }
-//actualizarListaAmigo();
 
 function agregarAmigo(){
     //Capturar el valor del campo de entrada
@@ -47,6 +46,7 @@ function sortearAmigo(){
         document.querySelector('#listaAmigos').remove();
         let button= document.querySelector('.button-add');
         button.disabled = true;
-
+    }else{
+        alert("No hay amigos disponibles para sortear");
     }
 }

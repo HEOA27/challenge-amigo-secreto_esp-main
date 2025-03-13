@@ -14,11 +14,14 @@ En este desafío, se desarrolló una aplicación que permite a los usuarios ingr
   
 #### Soluciones
 Para resolver el desafío se implementaron dos soluciones, por esta razón, en el proyecto se encuentran dos archivos js "app.js" y "app2.js" 
-- La solución en app.js es la que se encuentra vinculada al html y publicada en GitHub Pages. En esta solución el usuario puede visualizar a su lista de amigos mientras sortea a un amigo N número de veces.
-![image alt](https://github.com/HEOA27/challenge-amigo-secreto_esp-main/blob/9858fcf4fd61e8167068c0a957f860e89362c193/assets/app-resultado.png)
-- La solución en app2.js NO se encuentra vinculada al html o publicada en GitHub Pages, pero está lista para usarse, solo basta con vincular app2.js en el html en lugar de app.js. En esta solución el usuario solo puede realizar un sorteo y la lista se visualizará hasta que aparezca el resultado de ese sorteo.
-![image alt](https://github.com/HEOA27/challenge-amigo-secreto_esp-main/blob/9858fcf4fd61e8167068c0a957f860e89362c193/assets/app2-resultadosorteo.png)
-- En ambas soluciones la lista de amigos se visualiza mientras el usuario va añadiendo nuevos amigos.
+- En ambas soluciones la lista de amigos se visualiza mientras el usuario va añadiendo nuevos amigos hasta que aparezca el resultado de un sorteo realizado.
+  
+![image alt](https://github.com/HEOA27/challenge-amigo-secreto_esp-main/blob/main/assets/amigo_secreto_lista.png)
+
+- La solución en app.js es la que se encuentra vinculada al html y publicada en GitHub Pages. En esta solución el usuario puede sortear a sus amigos de su lista de amigos N número de veces, obteniendo como resultado de cada sorteo el nombre de uno de sus amigos.
+![image alt](https://github.com/HEOA27/challenge-amigo-secreto_esp-main/blob/main/assets/amigo_secreto_resultado.png)
+
+- La solución en app2.js NO se encuentra vinculada al html o publicada en GitHub Pages, pero está lista para usarse, solo basta con vincular app2.js en el html en lugar de app.js. En esta solución el usuario solo puede realizar un sorteo.
 
 #### Funciones y código JavaScript
 En ambos códigos JS se encuentran las siguientes tareas realizadas:
@@ -50,6 +53,7 @@ Creación de una función que seleccione de manera aleatoria uno de los nombres 
 app.js
 
 ```javascript
+
 let amigos = [];
 
 function actualizarListaAmigo(){
@@ -85,19 +89,25 @@ function sortearAmigo(){
     let indiceAleatorio=0;
     let numeroDeAmigos=amigos.length;
     //Validar que haya amigos disponibles
-    if(numeroDeAmigos!=0){
+    if(numeroDeAmigos==0){
+        alert("No hay amigos disponibles para sortear");
+        return;
+    }
         //Generar un índice aleatorio
         indiceAleatorio=Math.floor(Math.random()*(numeroDeAmigos));
         //Obtener el nombre sorteado y Mostrar el resultado
         let resultado = document.getElementById('resultado');
-        resultado.innerHTML = amigos[indiceAleatorio];
-       
-    }
+        resultado.innerHTML=`El amigo sorteado es: ${amigos[indiceAleatorio]}`;
+        let limpiarLista=document.getElementById("listaAmigos");
+        limpiarLista.innerHTML="";     
+        
 }
+
 ```
 app2.js
 
 ```javascript
+
 let amigos = [];
 
 function actualizarListaAmigo(){
@@ -113,7 +123,6 @@ function actualizarListaAmigo(){
     }
 
 }
-//actualizarListaAmigo();
 
 function agregarAmigo(){
     //Capturar el valor del campo de entrada
@@ -140,12 +149,12 @@ function sortearAmigo(){
         //Obtener el nombre sorteado y Mostrar el resultado
         let resultado = document.getElementById('resultado');   
         resultado.innerHTML = amigos[indiceAleatorio];
-        //Las siguientes líneas de código es para permitir al usuario un solo intento y que la lista de nombres se elimine de la vista (solo se muestre el resultado)
-        amigos=[];
+        //Las siguientes líneas de código es para permitir al usuario un solo intento y que la lista de nombres se elimine completamente
         document.querySelector('#listaAmigos').remove();
         let button= document.querySelector('.button-add');
         button.disabled = true;
-
+    }else{
+        alert("No hay amigos disponibles para sortear");
     }
 }
 ```

@@ -41,8 +41,7 @@ function sortearAmigo(){
         //Obtener el nombre sorteado y Mostrar el resultado
         let resultado = document.getElementById('resultado');   
         resultado.innerHTML = amigos[indiceAleatorio];
-        //Las siguientes líneas de código es para permitir al usuario un solo intento y que la lista de nombres se elimine de la vista (solo se muestre el resultado)
-        amigos=[];
+        //Las siguientes líneas de código es para permitir al usuario un solo intento y que la lista de nombres se elimine completamente
         document.querySelector('#listaAmigos').remove();
         let button= document.querySelector('.button-add');
         button.disabled = true;

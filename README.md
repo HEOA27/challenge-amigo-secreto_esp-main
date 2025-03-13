@@ -19,6 +19,7 @@ Para resolver el desafío se implementaron dos soluciones, por esta razón, en e
 ![image alt](https://github.com/HEOA27/challenge-amigo-secreto_esp-main/blob/main/assets/amigo_secreto_lista.png)
 
 - La solución en app.js es la que se encuentra vinculada al html y publicada en GitHub Pages. En esta solución el usuario puede sortear a sus amigos de su lista de amigos N número de veces, obteniendo como resultado de cada sorteo el nombre de uno de sus amigos.
+
 ![image alt](https://github.com/HEOA27/challenge-amigo-secreto_esp-main/blob/main/assets/amigo_secreto_resultado.png)
 
 - La solución en app2.js NO se encuentra vinculada al html o publicada en GitHub Pages, pero está lista para usarse, solo basta con vincular app2.js en el html en lugar de app.js. En esta solución el usuario solo puede realizar un sorteo.
